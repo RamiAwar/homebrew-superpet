@@ -5,54 +5,54 @@
 class Superpet < Formula
   desc "Simple command-line snippet and environment manager"
   homepage "https://github.com/ramiawar/superpet"
-  version "0.5.4"
+  version "0.5.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.4/superpet_0.5.4_darwin_arm64.tar.gz"
-      sha256 "12264942b815e56ee686c609367cbaab108832fe28c2f855c5228b8054573f67"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_darwin_arm64.tar.gz"
+      sha256 "d5eb96c66ce26339854ccb92add9b8b3c5529c6ecd1fc179736f99fe3b97d64b"
 
       def install
-        bin.install Dir['pet']
+        bin.install Dir['superpet']
         zsh_completion.install "misc/completions/zsh/_pet"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.4/superpet_0.5.4_darwin_amd64.tar.gz"
-      sha256 "46bcf07599dc805e18832b709b4cde81af389eeed73e6571f656e228329ccfed"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_darwin_amd64.tar.gz"
+      sha256 "97bf93b370704235fc017f207823890792283a31e3e8eb4da6edffdd05fe6a0d"
 
       def install
-        bin.install Dir['pet']
+        bin.install Dir['superpet']
         zsh_completion.install "misc/completions/zsh/_pet"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.4/superpet_0.5.4_linux_armv6.tar.gz"
-      sha256 "17f764e5a797b43fd74c94eab7de6dba7dbd90d561eb3289a10effb8a929b41d"
+    if Hardware::CPU.intel?
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_amd64.tar.gz"
+      sha256 "f31f213611bc1bf8c0f3699432e3f96e967044f3f0cab0ac47fa201866f5c1eb"
 
       def install
-        bin.install Dir['pet']
+        bin.install Dir['superpet']
+        zsh_completion.install "misc/completions/zsh/_pet"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_armv6.tar.gz"
+      sha256 "5750fa2817e2f04f23e695ca590d4ff860d5cf062f8c7acea4ed4160142e608b"
+
+      def install
+        bin.install Dir['superpet']
         zsh_completion.install "misc/completions/zsh/_pet"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.4/superpet_0.5.4_linux_arm64.tar.gz"
-      sha256 "aa691dc2800e494374dc66274fd621083af48ff721ac4c8996ee8f8c95f2d3a6"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_arm64.tar.gz"
+      sha256 "011ad16760acf053eb5690a31b5cfecf1c594724c5907e76636c13c2f33b33d4"
 
       def install
-        bin.install Dir['pet']
-        zsh_completion.install "misc/completions/zsh/_pet"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.4/superpet_0.5.4_linux_amd64.tar.gz"
-      sha256 "834cc156fde779518d72ae1d18623f4802aaf88aac01e9c51e304d5e91681d48"
-
-      def install
-        bin.install Dir['pet']
+        bin.install Dir['superpet']
         zsh_completion.install "misc/completions/zsh/_pet"
       end
     end
