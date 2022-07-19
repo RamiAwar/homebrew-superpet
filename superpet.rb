@@ -5,12 +5,12 @@
 class Superpet < Formula
   desc "Simple command-line snippet and environment manager"
   homepage "https://github.com/ramiawar/superpet"
-  version "0.5.5"
+  version "0.5.6"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_darwin_arm64.tar.gz"
-      sha256 "d5eb96c66ce26339854ccb92add9b8b3c5529c6ecd1fc179736f99fe3b97d64b"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.6/superpet_0.5.6_darwin_arm64.tar.gz"
+      sha256 "2cc9e65d29560c24de5220ad217400dde41baf038c132e14c9ff68808b022a3f"
 
       def install
         bin.install Dir['superpet']
@@ -18,8 +18,8 @@ class Superpet < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_darwin_amd64.tar.gz"
-      sha256 "97bf93b370704235fc017f207823890792283a31e3e8eb4da6edffdd05fe6a0d"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.6/superpet_0.5.6_darwin_amd64.tar.gz"
+      sha256 "e1b5fba08c24a47d96bce4f58dc45c74d00efe9fdf85b7b9810960a6f37bb499"
 
       def install
         bin.install Dir['superpet']
@@ -29,18 +29,9 @@ class Superpet < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_amd64.tar.gz"
-      sha256 "f31f213611bc1bf8c0f3699432e3f96e967044f3f0cab0ac47fa201866f5c1eb"
-
-      def install
-        bin.install Dir['superpet']
-        zsh_completion.install "misc/completions/zsh/_pet"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_armv6.tar.gz"
-      sha256 "5750fa2817e2f04f23e695ca590d4ff860d5cf062f8c7acea4ed4160142e608b"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.6/superpet_0.5.6_linux_armv6.tar.gz"
+      sha256 "4869f5f45ba346650fd30b0d2a9ee75bfd701503d1b22a345eaeb7f1c8c0ae0b"
 
       def install
         bin.install Dir['superpet']
@@ -48,8 +39,17 @@ class Superpet < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ramiawar/superpet/releases/download/v0.5.5/superpet_0.5.5_linux_arm64.tar.gz"
-      sha256 "011ad16760acf053eb5690a31b5cfecf1c594724c5907e76636c13c2f33b33d4"
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.6/superpet_0.5.6_linux_arm64.tar.gz"
+      sha256 "344daea46c290006a76d16a856a329b6c36eaaab9bf07aedf55519ebe4ac4817"
+
+      def install
+        bin.install Dir['superpet']
+        zsh_completion.install "misc/completions/zsh/_pet"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ramiawar/superpet/releases/download/v0.5.6/superpet_0.5.6_linux_amd64.tar.gz"
+      sha256 "895126157ceca477f7040ca2b0492148db1ec6df08f134a1e093fa81249b2e95"
 
       def install
         bin.install Dir['superpet']
